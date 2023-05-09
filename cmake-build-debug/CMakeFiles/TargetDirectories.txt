@@ -1,3 +1,0 @@
-/home/corite/code/parallel-computing/cmake-build-debug/CMakeFiles/parallel_computing.dir
-/home/corite/code/parallel-computing/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/corite/code/parallel-computing/cmake-build-debug/CMakeFiles/rebuild_cache.dir
