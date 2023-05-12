@@ -3,9 +3,9 @@
 
 double **alloc_mat(int col, int row) {
     double *actual_mat = malloc(col * row * sizeof(double));
-    double **mat = malloc(row * sizeof(double*));
+    double **mat = malloc(row * sizeof(double *));
     for (int i = 0; i < row; i++)
-        mat[i] = actual_mat+ (i*col* sizeof(double));
+        mat[i] = actual_mat + (i * col * sizeof(double));
     return mat;
 }
 
@@ -42,24 +42,42 @@ void matrix_vector(int n1, int n2, double **A, double *x, double *b) {
     }
 }
 
-int main() {
-    int nnz = 2;
+void test_sparsemv() {
+    double *A;
     int *col;
     int *row;
-    double *val;
-    alloc_spmat(nnz, &col, &row, &val);
-    col[0] = 0;
+    alloc_spmat(6, &col, &row, &A);
+    A[0] = 3;
+    col[0] = 1;
     row[0] = 0;
-    col[1] = 1;
+    A[1] = 3;
+    col[1] = 0;
     row[1] = 1;
-    val[0] = 1;
-    val[1] = 2;
+    A[2] = 3;
+    col[2] = 2;
+    row[2] = 1;
+    A[3] = 3;
+    col[3] = 0;
+    row[3] = 2;
+    A[4] = 3;
+    col[4] = 1;
+    row[4] = 2;
+    A[5] = 3;
+    col[5] = 2;
+    row[5] = 2;
+    double *x = malloc(3 * sizeof(double));
+    x[0] = 1;
+    x[1] = 2;
+    x[2] = 3;
+    double *b = calloc(3 , sizeof(double));
+    sparsemv(0, 0, 6, row, col, A, x, b);
+    for (int i = 0; i < 3; ++i) {
+        printf("%f\n", b[i]);
+    }
+}
 
-    double vec[] = {2.0, 3.0};
-    double res[] = {0.0,0.0};
-    sparsemv(2,2,2,row,col,val,vec,res);
-    printf("%f,%f", res[0], res[1]);
-
+int main() {
+    test_sparsemv();
     return 0;
 }
 
