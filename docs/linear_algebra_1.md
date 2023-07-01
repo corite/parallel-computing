@@ -16,7 +16,7 @@
 ### Coordinate-List-Representation
 
 - for each non-zero entry, save row, column and value
-- all other entries are implicitely zero
+- all other entries are implicitly zero
 
 ### Compressed-Row-Format-Representation
 

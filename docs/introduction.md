@@ -1,7 +1,7 @@
 # Introduction
 
 - Moore's law unsustainable
-- further increasing processor frequency / shrinking transistor sizes ineffecient or not possible
+- further increasing processor frequency / shrinking transistor sizes inefficient or not possible
 
 ## Parallel Computing
 
