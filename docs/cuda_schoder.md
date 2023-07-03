@@ -1,4 +1,4 @@
-# Cuda 1 Schoder
+# Cuda Schoder
 
 ## GPUs
 
@@ -30,9 +30,9 @@
 __host__ //CPU function
 __device__ //GPU function, only callable from GPU
 __global__ //GPU function, callable by CPU (the kernel entry point)
-cudaMalloc() //allocate GPU shared memory
-cudaMemcpy() //transfer data between GPU and system memory
-cudaFree() //free GPU shared memory
+cudaMalloc(ptr,sze); //allocate GPU shared memory
+cudaMemcpy(dst,src,sze,mod); //transfer data between GPU and system memory, mod \in cudaMemcpyHostToHost, cudaMemcpyHostToDevice, cudaMemcpyDeviceToHost, cudaMemcpyDeviceToDevice, cudaMemcpyDefault (inferred)
+cudaFree(ptr); //free GPU shared memory
 <<<grid,threads_per_block,sm_size,stream>>>kernel(foo) //kernel call, only grid and threads_per_block necessary
 //timing
 float time;
