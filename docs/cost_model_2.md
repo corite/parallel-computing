@@ -3,7 +3,7 @@
 ## Pipelining
 
 I think this is just a theoretical example, the point of which I fail to grasp.
-
+    
 ## HyperThreading
 
 - problem: 

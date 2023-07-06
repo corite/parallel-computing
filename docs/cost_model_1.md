@@ -28,7 +28,7 @@ $E(p)=\frac{S(p)}{p}=\frac{T(1)}{p\cdot T(p)}$
 
 ## Goal
 
-$S(p)\equiv p, E(p) \equiv 1$
+$S(p)\approx p, E(p) \approx 1$
 
 ## Ahmdals Law
 
@@ -40,13 +40,22 @@ where
 - f = parallel part of code
 - v = speedup for parallel part (f)
 
-## Gustafson's Law
+Problems with this definition:
 
-(Ahmdal is to pessimistic)
+- implicitly assumes that, when one is interested in speedup, the problem size doe not change
+  - this is almost never the case. If an algorithm gets faster, it is usually applied to bigger problem sized
+  - it is more realistic to assume that the overall computation time stays the same
+- in reality, the serial parts of the code are usually, startup, IO, ... tasks
+  - do not scale with problem size
+- in summary, Ahmdals Law is too pessimistic $\rightarrow$ Gustafson's Law
+
+## Gustafson's Law
 
 $S_g(p)=p+(1-p)\cdot h$
 
-## Iso Eficciency
+//todo I don't really understand what assumptions changed to get to this new formula
+
+## Iso Efficiency
 
 Iso-efficiency function is a model that relates the size of the problem being
 solved to the number of processors required to maintain the efficiency at a
@@ -57,7 +66,7 @@ fixed value - “Iso” from Ancient Greek ἴσος (ísos, “equal”).
 - $T(p,W(n))$ (Parallel) run-time of problem – depending on the number of processing units and the problem size
 - $T_O(p,W(n))$ Total Overhead function – function depending on the number of processing units and the problem size
 
-//todo what else?
+//todo what else? Do we need all the formulas?
 
 ## Roofline Model
 
