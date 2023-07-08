@@ -18,7 +18,7 @@
 
 ```C
 #pragma omp {parallel|single|master}
-pragma omp parallel [num_threads(i)] [private(vars)] [shared(vars)] [default(none|shared|private)] [if(expr)] //default none means that all vars needed to have an explicit scope, nothing is assumed
+#pragma omp parallel [num_threads(i)] [private(vars)] [shared(vars)] [default(none|shared|private)] [if(expr)] //default none means that all vars needed to have an explicit scope, nothing is assumed
 #pragma omp parallel for {private|shared|default}(vars) reduction(op:var)//define scope of variables used in for loop, they need to be defined beforehand. Specify reduction p.e. (+:a)
 #pragma omp parallel for {firstprivate|lastprivate}(vars) //defines how vars are initialized and which value is returned to outside of the parallel region. A variable can be both firstprivate and lastprivate
 

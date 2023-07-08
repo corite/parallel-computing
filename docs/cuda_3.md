@@ -11,7 +11,7 @@
 - when the OS needs more memory than is physically available, it can write less frequently used pages to persistent storage, thereby effectively freeing memory
 - problem: access to these swapped-out pages is now very slow
 - to prevent the os to swap out a certain page, it can be pinned (page-locked)
-- pinned memory can, in contrast to to pageable memory, be accessed directly by the GPU (Question: does this circumvent the whole memory virtualization process, i.e. can the OS move pinned pages for p.e. defragmentation)
+- pinned memory can, in contrast to to pageable memory, be accessed directly by the GPU
 - accessing pinned memory is generally faster, but allocating too much of it can slow down the whole system since it has less overall memory available
 
 ```C
