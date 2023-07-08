@@ -18,9 +18,9 @@
 
 $S(p) = \frac{T(1)}{T(p)}$ where
 
-- p = number of processors
-- S(p) = speed-up using p processors
-- T(p) = execution time with p processors
+- $p =$ number of processors
+- $S(p) =$ speed-up using p processors
+- $T(p) =$ execution time with p processors
 
 ## Efficiency
 
@@ -36,14 +36,14 @@ $S(v) = \frac{1}{h+\frac{f}{v}}$
 
 where
 
-- h=1-f= serial part of code
-- f = parallel part of code
-- v = speedup for parallel part (f)
+- $h=1-f=$ serial part of code
+- $f =$ parallel part of code
+- $v =$ speedup for parallel part
 
 Problems with this definition:
 
 - implicitly assumes that, when one is interested in speedup, the problem size doe not change
-  - this is almost never the case. If an algorithm gets faster, it is usually applied to bigger problem sized
+  - this is almost never the case. If an algorithm gets faster, it is usually applied to bigger problem size
   - it is more realistic to assume that the overall computation time stays the same
 - in reality, the serial parts of the code are usually, startup, IO, ... tasks
   - do not scale with problem size
@@ -51,7 +51,7 @@ Problems with this definition:
 
 ## Gustafson's Law
 
-$S_g(p)=p+(1-p)\cdot h$
+$S_g(p)=p+(1-p)\cdot h'$
 
 //todo I don't really understand what assumptions changed to get to this new formula
 
@@ -66,7 +66,8 @@ fixed value - “Iso” from Ancient Greek ἴσος (ísos, “equal”).
 - $T(p,W(n))$ (Parallel) run-time of problem – depending on the number of processing units and the problem size
 - $T_O(p,W(n))$ Total Overhead function – function depending on the number of processing units and the problem size
 
-//todo what else? Do we need all the formulas?
+//todo formulas
+//todo correct Torstens mistakes
 
 ## Roofline Model
 
@@ -74,3 +75,8 @@ Simple model to determine if an application is bound by peak band-width or peak 
 The model is based on arithmetical/operational intensity measuring the number of floating-point operations/operations per byte.
 
 //todo what else?
+
+## Matrix Vector
+
+- Stripe based: each processor has some rows in the matrix and the corresponding vector entries assigned
+- checkerboard:

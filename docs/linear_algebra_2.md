@@ -33,4 +33,5 @@ $C=A\times B$
 ## DNS Algorithm
 
 - given $n^3$ processors, this approach can achieve $O(\log n)$ parallel runtime
+- idea: every processor only does one multiplication (and some additions)
 - not performant in reality because of slow interprocessor communication

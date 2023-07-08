@@ -8,6 +8,8 @@
 ## Synchronization
 
 ```C
+#include <omp.h>
+
 #pragma omp critical //block executed by one thread at a time
 #pragma omp atomic [update|read|write|capture] //make next memory access atomic, might be more performant than 'critical'
 #pragma omp barrier //wait until all threads have arrived

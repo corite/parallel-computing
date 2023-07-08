@@ -33,7 +33,8 @@ __global__ //GPU function, callable by CPU (the kernel entry point)
 cudaMalloc(ptr,sze); //allocate GPU shared memory
 cudaMemcpy(dst,src,sze,mod); //transfer data between GPU and system memory, mod \in cudaMemcpyHostToHost, cudaMemcpyHostToDevice, cudaMemcpyDeviceToHost, cudaMemcpyDeviceToDevice, cudaMemcpyDefault (inferred)
 cudaFree(ptr); //free GPU shared memory
-<<<grid,threads_per_block,sm_size,stream>>>kernel(foo) //kernel call, only grid and threads_per_block necessary
+<<<dim3_grid,dim3_block,int_dyn_mem_p_block,stream>>>kernel(foo) //kernel call, only dim3_grid and dim3_block necessary
+<<<int_blocks,int_threads_per_block>>>kernel(foo) //kernel call, may be correct but not sure
 //timing
 float time;
 cudaEvent_t start, end;
@@ -44,4 +45,12 @@ kernel <<< grid, threads >>>(a_dev , b_dev , size );
 cudaEventRecord ( end );
 cudaEventSynchronize ( end );
 cudaEventElapsedTime (&time, start, end );
+```
+[kernel parameters](https://docs.nvidia.com/cuda/cuda-c-programming-guide/#execution-configuration)
+
+## Execution
+
+```bash
+nvcc -o beispiel beispiel.cu -arch=sm_35
+
 ```

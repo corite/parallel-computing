@@ -14,6 +14,8 @@
 - data movement "cheap" (not really though)
 - not very scalable
 
+![threads](threads.png)
+
 ## OpenMP Syntax
 
 ```C
@@ -27,4 +29,12 @@ omp_get_num_threads();
 omp_get_thread_num();
 omp_get_max_threads();
 omp_get_wtime();
+omp_in_parallel(); // true if you are currently in a parallel region
+```
+
+## Compilation & execution
+
+```
+gcc -o out -fopenmp program.c
+chmod+x out && OMP_NUM_THREADS=8 ./out
 ```

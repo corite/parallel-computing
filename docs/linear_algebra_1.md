@@ -12,6 +12,7 @@
 ## Sparse Matrices
 
 - most entries are 0 and should not take up space in memory
+- $\rightarrow$ only non-zero entries are saved
 
 ### Coordinate-List-Representation
 
@@ -23,6 +24,7 @@
 - like previous, but entries sorted by row, then column
 - therefore each row only has to be saved once (and not for every entry in that row)
 - when going through the list of column-value entries, the next corresponding row entry is chosen when the column decreases, otherwise it stays the same
+- more memory efficient, but only works (well) if you are traversing the matrix row-by-row
 
 ## Applications
 

@@ -8,7 +8,7 @@ I think this is just a theoretical example, the point of which I fail to grasp.
 
 - problem: 
   - threads tend to do a lot of IO, during which the processor can't do anything except wait
-  - doing a full context switch (to a different to a different thread) every time is pretty expensive
+  - doing a full context switch (to an entirely different thread) every time is pretty expensive (registers, stack and heap have to be saved)
 - solution:
   - introduce virtual processors (usually 2x physical processors)
   - OS distributes work to the virtual processors, as if they were real
