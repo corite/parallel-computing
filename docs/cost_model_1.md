@@ -51,9 +51,13 @@ Problems with this definition:
 
 ## Gustafson's Law
 
-$S_g(p)=p+(1-p)\cdot h'$
+$S_g(p)=\frac{h'+f'\cdot p}{h'+f'}$
 
-//todo I don't really understand what assumptions changed to get to this new formula
+$S_g(p)=h'+f'\cdot p$
+
+$S_g(p)=h'+ (1-h')\cdot p$
+
+$S_g(p)=p+(1-p)\cdot h'$
 
 ## Iso Efficiency
 
@@ -63,18 +67,22 @@ fixed value - “Iso” from Ancient Greek ἴσος (ísos, “equal”).
 
 - $W(n)$ Problem size – function on input size n describing the total number of basic operations to solve a problem
 - $T(1,W(n))$ Run-time of problem for 1 processor depending on problem size
-- $T(p,W(n))$ (Parallel) run-time of problem – depending on the number of processing units and the problem size
-- $T_O(p,W(n))$ Total Overhead function – function depending on the number of processing units and the problem size
-
-//todo formulas
-//todo correct Torstens mistakes
+- $T_O(p,W(n))= p\cdot T(p,W(n))-T(1,W(n))$ Total Overhead function – function depending on the number of processing units and the problem size
+- $T(p,W(n)) = \frac{T(1,W(n))+T_O(p,W(n))}{p}$ (Parallel) run-time of problem – depending on the number of processing units and the problem size
+- $S(p,W(n))=\frac{T(1,W(n))}{T(p,W(n))}$ the resulting speedup
+- $E(p,W(n))=\frac{S(p,W(n))}{p}$ the efficiency
+- $E^*$ the desired efficiency
+- $\kappa = \frac{E^*}{1-E^*}$ then $W(n)=\kappa*T_O(p,W(n))$
 
 ## Roofline Model
 
 Simple model to determine if an application is bound by peak band-width or peak performance.
 The model is based on arithmetical/operational intensity measuring the number of floating-point operations/operations per byte.
 
-//todo what else?
+- peak performance $\pi$: FLOPS
+- operational intensity $I$: $\frac{\# FLOP}{\# byte}$
+- memory bandwith $\beta$: $\frac{\# byte}{sec}$
+- $P=\min(\frac{\pi}{\beta\cdot I})$ the actual achievable performance of this code
 
 ## Matrix Vector
 
