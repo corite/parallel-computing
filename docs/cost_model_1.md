@@ -42,7 +42,7 @@ where
 
 Problems with this definition:
 
-- implicitly assumes that, when one is interested in speedup, the problem size doe not change
+- implicitly assumes that, when one is interested in speedup, the problem size does not change
   - this is almost never the case. If an algorithm gets faster, it is usually applied to bigger problem size
   - it is more realistic to assume that the overall computation time stays the same
 - in reality, the serial parts of the code are usually, startup, IO, ... tasks

@@ -22,9 +22,8 @@
 ### Compressed-Row-Format-Representation
 
 - like previous, but entries sorted by row, then column
-- therefore each row only has to be saved once (and not for every entry in that row)
-- when going through the list of column-value entries, the next corresponding row entry is chosen when the column decreases, otherwise it stays the same
-- more memory efficient, but only works (well) if you are traversing the matrix row-by-row
+- the row array now always points to the beginning of the row in the value array
+- pro: allows fast row access and saves memory
 
 ## Applications
 
