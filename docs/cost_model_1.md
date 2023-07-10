@@ -38,7 +38,7 @@ where
 
 - $h=1-f=$ serial part of code
 - $f =$ parallel part of code
-- $v =$ speedup for parallel part
+- $v =$ speedup for parallel part $\approx$ number of processors
 
 Problems with this definition:
 
@@ -73,6 +73,8 @@ fixed value - “Iso” from Ancient Greek ἴσος (ísos, “equal”).
 - $E(p,W(n))=\frac{S(p,W(n))}{p}$ the efficiency
 - $E^*$ the desired efficiency
 - $\kappa = \frac{E^*}{1-E^*}$ then $W(n)=\kappa*T_O(p,W(n))$
+
+//todo read the goddamn paper
 
 ## Roofline Model
 
