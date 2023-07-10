@@ -33,8 +33,8 @@ __global__ //GPU function, callable by CPU (the kernel entry point)
 cudaMalloc(ptr,sze); //allocate GPU shared memory
 cudaMemcpy(dst,src,sze,mod); //transfer data between GPU and system memory, mod \in cudaMemcpyHostToHost, cudaMemcpyHostToDevice, cudaMemcpyDeviceToHost, cudaMemcpyDeviceToDevice, cudaMemcpyDefault (inferred)
 cudaFree(ptr); //free GPU shared memory
-<<<dim3_grid,dim3_block,int_dyn_mem_p_block,stream>>>kernel(foo) //kernel call, only dim3_grid and dim3_block necessary
-<<<int_blocks,int_threads_per_block>>>kernel(foo) //kernel call, like previous but squashes everything into 1 dimension (I think)
+kernel<<<dim3_grid,dim3_block,int_dyn_mem_p_block,stream>>>(foo) //kernel call, only dim3_grid and dim3_block necessary
+kernel<<<int_blocks,int_threads_per_block>>>(foo) //kernel call, like previous but squashes everything into 1 dimension (I think)
 float time;
 cudaEvent_t start, end;
 cudaEventCreate ( &start );
