@@ -51,5 +51,4 @@ cudaEventElapsedTime (&time, start, end );
 
 ```bash
 nvcc -o beispiel beispiel.cu -arch=sm_35
-
 ```

@@ -43,7 +43,7 @@ where
 Problems with this definition:
 
 - implicitly assumes that, when one is interested in speedup, the problem size does not change
-  - this is almost never the case. If an algorithm gets faster, it is usually applied to bigger problem size
+  - this is almost never the case. If an algorithm gets faster, it is usually applied to bigger problem sizes
   - it is more realistic to assume that the overall computation time stays the same
 - in reality, the serial parts of the code are usually, startup, IO, ... tasks
   - do not scale with problem size
@@ -78,7 +78,7 @@ fixed value - “Iso” from Ancient Greek ἴσος (ísos, “equal”).
 
 ## Roofline Model
 
-Simple model to determine if an application is bound by peak band-width or peak performance.
+Simple model to determine whether an application is bound by peak band-width or peak performance.
 The model is based on arithmetical/operational intensity measuring the number of floating-point operations/operations per byte.
 
 - peak performance $\pi$: FLOPS

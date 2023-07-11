@@ -49,5 +49,4 @@ Question: In a parallel loop, how is work assigned to the thread pool?
 ```C
 //scoping of vars and conditional execution like omp parallel
 #pragma omp task [mergeable] [final(cond)] [depend(type: vars)] [priority(value)] //type \in {in,out,inout}
-
 ```

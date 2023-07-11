@@ -27,7 +27,11 @@ cudaFreeHost(ptr); //free pinned memory
 
 ## Unified Memory (Unified Virtual Addressing)
 
-- host and devices share a single virtual address space
+- UVA
+  - host and devices share a single virtual address space
+  - enables `cudaMemcpyDefault` mode which infers source and destination
+- Unified Memory
+  - device can directly access host memory (even paged memory)
 
 ## Streams
 
